@@ -20,6 +20,9 @@ public class enemyChaseAI : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, Player.transform.position);
         Vector2 direction = Player.transform.position - transform.position;
+        
+
+
 
 
 
@@ -30,6 +33,10 @@ public class enemyChaseAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, Player.transform.position, Speed * Time.deltaTime);
             SlimeAnim.SetBool("IsRunning", true);
 
+        }
+        else
+        {
+            SlimeAnim.SetBool("IsRunning", true);
         }
     }
 }

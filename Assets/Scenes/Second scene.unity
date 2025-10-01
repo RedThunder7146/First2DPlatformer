@@ -136,13 +136,21 @@ PrefabInstance:
       propertyPath: playerAnim
       value: 
       objectReference: {fileID: 24870395}
+    - target: {fileID: 2122479416886480976, guid: 4a35de79d1574f5469062a7676fcde34, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4610611147415589837, guid: 4a35de79d1574f5469062a7676fcde34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.114913
+      value: 0.8618296
       objectReference: {fileID: 0}
     - target: {fileID: 4610611147415589837, guid: 4a35de79d1574f5469062a7676fcde34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.889126
+      value: 0.6872959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610611147415589837, guid: 4a35de79d1574f5469062a7676fcde34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.31693068
       objectReference: {fileID: 0}
     - target: {fileID: 4610611147415589837, guid: 4a35de79d1574f5469062a7676fcde34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,9 +218,9 @@ GameObject:
   - component: {fileID: 891386586}
   - component: {fileID: 891386585}
   - component: {fileID: 891386584}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: background platforms_0
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +269,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.03, y: 0.81}
+  m_Size: {x: 3.03, y: 0.73}
   m_EdgeRadius: 0
 --- !u!212 &891386585
 SpriteRenderer:
@@ -367,8 +375,8 @@ Transform:
   m_GameObject: {fileID: 1145782712}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6507118, y: 3.4256117, z: 0}
-  m_LocalScale: {x: 4.3575263, y: 3.790072, z: 2.4390244}
+  m_LocalPosition: {x: 0.6453, y: 3.4256117, z: 0}
+  m_LocalScale: {x: 4.7061286, y: 3.790072, z: 2.4390244}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 983659118}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerMoveScript : MonoBehaviour
 {
-
+    HelperScript helper;
     public Rigidbody2D myRigidbody;
     public float playerSpeedY;
     public float playerSpeedX;
@@ -15,14 +15,25 @@ public class playerMoveScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            helper.HelloWorld();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
+        {
+            helper.ResetGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            helper.ResetScene();
+        }
 
         if (Input.GetKey(KeyCode.Space)&&IsGrounded())
         {
@@ -34,7 +45,7 @@ public class playerMoveScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
 
-
+            helper.DoFlipObject(true);
             myRigidbody.linearVelocityX = -1f * playerSpeedX;
             
             if (IsGrounded())
@@ -46,7 +57,7 @@ public class playerMoveScript : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
 
-
+            helper.DoFlipObject(false);
             myRigidbody.linearVelocityX = 1f * playerSpeedX;
 
             if (IsGrounded())

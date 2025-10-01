@@ -11,7 +11,7 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public int health;
     public Text healthBar;
-    public GameObject gameOverScreen;
+    public Text gameOverScreen;
     [ContextMenu("Increase Score")]
     public void addScore(int ScoreToAdd)
     {
@@ -25,7 +25,18 @@ public class LogicScript : MonoBehaviour
         healthBar.text = health.ToString();
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            EnableText();
         }
+        else
+        {
+            gameOverScreen.enabled = false;
+        }
+    }
+
+
+    public void EnableText()
+    {
+        gameOverScreen.enabled = true;
+
     }
 }

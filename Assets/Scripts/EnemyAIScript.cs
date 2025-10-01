@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -7,20 +8,22 @@ public class EnemyAI : MonoBehaviour
     public Animator SlimeAnim;
     public LayerMask groundLayer;
     public Rigidbody2D slimeRigidBody;
+    public LogicScript logicScript;
     float xvel = 1;
+    HelperScript helper;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        // print("Enemy says: Player has " + logicScript.health + " health left");
         if (xvel < 0)
         {
+            helper.DoFlipObject(true);
             if (ExtendedRayCollisionCheck(-2, 0) == false)
             {
                 xvel = -xvel;
@@ -29,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (xvel >0)
         {
+            helper.DoFlipObject(false);
             if (ExtendedRayCollisionCheck(2, 0) == false)
             {
                 xvel = -xvel;
@@ -41,7 +45,18 @@ public class EnemyAI : MonoBehaviour
         {
             SlimeAnim.SetBool("IsRunning", false);
         }
-        slimeRigidBody.linearVelocityX = 1f * xvel * Speed;
+        if (logicScript.health == 3)
+        {
+            slimeRigidBody.linearVelocityX = 1f * xvel * Speed;
+        }
+        else if (logicScript.health == 2)
+        {
+            slimeRigidBody.linearVelocityX = 2f * xvel * Speed;
+        }
+        else
+        {
+            slimeRigidBody.linearVelocityX = 3f * xvel * Speed;
+        }
     }
        
     
@@ -67,7 +82,7 @@ public class EnemyAI : MonoBehaviour
 
         if (hit.collider != null)
         {
-            print("Player has collided with Ground layer");
+
             hitColor = Color.green;
             hitSomething = true;
         }
@@ -78,5 +93,6 @@ public class EnemyAI : MonoBehaviour
         return hitSomething;
 
     }
+    
 
 }

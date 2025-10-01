@@ -56,7 +56,6 @@ public class MovingPlatformScript : MonoBehaviour
 
         if (hit.collider != null)
         {
-            print("Player has collided with Ground layer");
             hitColor = Color.green;
             hitSomething = true;
         }
