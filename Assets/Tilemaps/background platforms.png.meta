@@ -665,10 +665,10 @@ TextureImporter:
       name: background platforms_20
       rect:
         serializedVersion: 2
-        x: 216
-        y: 129
-        width: 74
-        height: 74
+        x: 215
+        y: 128
+        width: 75
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,9 +687,9 @@ TextureImporter:
       name: background platforms_21
       rect:
         serializedVersion: 2
-        x: 303
+        x: 302
         y: 126
-        width: 73
+        width: 74
         height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -709,10 +709,10 @@ TextureImporter:
       name: background platforms_22
       rect:
         serializedVersion: 2
-        x: 386
-        y: 130
-        width: 74
-        height: 73
+        x: 385
+        y: 128
+        width: 76
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
